@@ -5,6 +5,11 @@
 # with the upstream repository.
 set -e
 
+# change directory if needed
+if [ "$#" = 1 ] ; then
+    cd $1
+fi
+
 # determine if upstream exists
 SHOULD_SYNC=false
 for remote in `git remote`; do
